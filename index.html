@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Romantic Interactive Meadow</title>
+    <meta name="description" content="A magical romantic experience — draw fire to reveal your secret message." />
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- MediaPipe dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- ═══════ Welcome / Customization Screen ═══════ -->
+    <div id="welcome_screen">
+      <div class="welcome-bg-glow"></div>
+      <div class="welcome-content">
+        <h1 class="welcome-title">✦ A Letter For You ✦</h1>
+        <p class="welcome-subtitle">Write your secret, and light it up with fire</p>
+
+        <div class="input-group">
+          <label for="input_final_msg">Final Message</label>
+          <input type="text" id="input_final_msg" placeholder="for you" maxlength="20" autocomplete="off" />
+        </div>
+
+        <button id="btn_start" type="button">Begin</button>
+
+        <p class="welcome-footer">Gently brush across the meadow to reveal the magic ✧</p>
+      </div>
+    </div>
+
+    <!-- ═══════ Main Canvas ═══════ -->
+    <canvas id="output_canvas"></canvas>
+    
+    <!-- Circular face-cam in bottom-right corner (also used as MediaPipe input) -->
+    <div id="face_cam">
+      <video id="input_video" autoplay playsinline muted></video>
+      <div class="face-cam-ring"></div>
+    </div>
+
+    <!-- Stage hints removed -->
+    
+    <!-- Loading overlay -->
+    <div id="loading" class="overlay">
+      <div class="spinner"></div>
+      <p>Igniting magic...</p>
+    </div>
+
+    <!-- Instructions overlay (legacy, now replaced by stage hints) -->
+    <div id="instructions" class="overlay" style="display: none;">
+      <p>Pinch your fingers to cast a spell</p>
+      <p class="small">(Or click/tap anywhere)</p>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
