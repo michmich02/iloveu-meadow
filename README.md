@@ -1,10 +1,22 @@
 # I Love U Meadow
 
-A browser-based interactive creative coding experiment by Michelle Guan.
+> A romantic interactive meadow with gesture-driven fire.
 
-## Live demo
+[**View live demo →**](https://michmich02.github.io/iloveu-meadow/)
 
-https://michmich02.github.io/iloveu-meadow/
+## Overview
+
+I Love U Meadow explores how a small hand gesture can make a digital scene feel intimate and alive. Camera input drives a cinematic meadow, light, sound, and fire effects.
+
+## Interaction
+
+- Allow camera access.
+- Keep your hand visible in the frame.
+- Use the on-screen gesture cues to activate the scene.
+
+## Built with
+
+`JavaScript` · `MediaPipe` · `Three.js` · `Web Audio`
 
 ## Run locally
 
@@ -12,14 +24,10 @@ https://michmich02.github.io/iloveu-meadow/
 python3 -m http.server 8000 --directory docs
 ```
 
-Open http://localhost:8000. Camera access requires localhost or HTTPS. Use a desktop browser and good lighting; allow camera or microphone access when the experience asks for it. External models and CDN scripts require internet access.
+Open [http://localhost:8000](http://localhost:8000) in a desktop browser. Camera and microphone APIs require localhost or HTTPS; external models and CDN dependencies require an internet connection.
 
-## Files
+## Design notes
 
-The root contains the project source. `docs/` contains the prepared static demo.
-
-## Publishing
-
-Enable GitHub Pages with **Deploy from a branch**, branch **main**, folder **/docs**.
-
-Camera, microphone and gesture behavior should be verified on the target device.
+- Immediate visual feedback keeps the gesture-to-effect relationship legible.
+- The experience is designed as a focused, full-screen interaction.
+- Processing happens in the browser; camera and microphone streams are not uploaded by this project.
